@@ -1,3 +1,162 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": "speedtest.net",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.99.0",
+        "188.114.98.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "TLS5-ALL|@ArV2ray § 0",
+        "WS6-Irancell+|+@ArV2ray § 1",
+        "TLS6-ALL|@ArV2ray § 2",
+        "WS7-Irancell+|+@ArV2ray § 3",
+        "TLS7-ALL|@ArV2ray § 4",
+        "WS-Irancell+|+@ArV2ray § 5",
+        "TLS-ALL|@ArV2ray § 6"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "TLS5-ALL|@ArV2ray § 0",
+        "WS6-Irancell+|+@ArV2ray § 1",
+        "TLS6-ALL|@ArV2ray § 2",
+        "WS7-Irancell+|+@ArV2ray § 3",
+        "TLS7-ALL|@ArV2ray § 4",
+        "WS-Irancell+|+@ArV2ray § 5",
+        "TLS-ALL|@ArV2ray § 6"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "TLS5-ALL|@ArV2ray § 0",
+      "server": "speedtest.net",
+      "server_port": 443,
+      "uuid": "telegram-id-ArV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "aloy2.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "WS6-Irancell+|+@ArV2ray § 1",
+      "server": "speedtest.net",
+      "server_port": 80,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+
+
+
 vless://91e1407b-6656-41b3-999b-6a2e061f67dc@graph-cpu-mark-net03.cyberscaler.com:2096?encryption=none&security=tls&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=graph-cpu-mark-net03.cyberscaler.com.&path=%2F%3Fed%3D8443#%F0%9F%94%A5WS-TLS-FIN%F0%9F%87%AB%F0%9F%87%AE%20-%20CDN-server-list01
 
 vless://bbc417ad-66e8-447e-b6af-c2229080ed61@104.16.78.38:2083?type=ws&path=%2F%3Fed%3D8443&host=graph-cpu-mark-net03.cyberscaler.com.&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1&allowInsecure=1#%F0%9F%94%A5WS-TLS-FIN%F0%9F%87%AB%F0%9F%87%AE%20-%20CDN-231
