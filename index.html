@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>استهلاك السيرفرات</title>
+  <style>
+    body { font-family: sans-serif; direction: rtl; background: #f7f7f7; padding: 20px; }
+    .server-box { background: #fff; padding: 15px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 0 10px #ccc; width: 300px; }
+    .bar { height: 10px; background: #ddd; border-radius: 5px; overflow: hidden; margin: 10px 0; }
+    .progress { height: 100%; background: linear-gradient(to right, #b3ffab, #12fff7); }
+  </style>
+</head>
+<body>
+  <h2>حالة السيرفرات</h2>
+  <div id="servers"></div>
+
+  <script>
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('servers');
+        data.forEach(server => {
+          const percent = (server.usage / server.limit) * 100;
+          const box = document.createElement('div');
+          box.className = 'server-box';
+          box.innerHTML = `
+            <strong>${server.name}</strong>
+            <div class="bar"><div class="progress" style="width:${percent}%"></div></div>
+            ${server.usage}GiB / ${server.limit}GiB — <strong>${server.days_remaining} يوم متبقي</strong>
+          `;
+          container.appendChild(box);
+        });
+      });
+  </script>
+</body>
+</html>
