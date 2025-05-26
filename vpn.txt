@@ -5,3 +5,5 @@ ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw==@104.192.226.106:989#%F0%9F%87%BA%F
 ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY=@103.36.91.23:8388#%F0%9F%87%BA%F0%9F%87%B8US-103.36.91.23-5704
 vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.114:8880?security=&sni=pqh25v1.vetdomok.shop&type=grpc&encryption=none#%F0%9F%87%BA%F0%9F%87%B8[openproxylist.com]%20vless-US
 vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.163:8880?security=&sni=pqh35v1.vetdomok.shop&type=grpc&encryption=none#%F0%9F%87%BA%F0%9F%87%B8[openproxylist.com]%20vless-US
+
+hy2://115599a@88.218.78.53:34152?obfs=salamander&obfs-password=115599aa&insecure=1#HYS/313/%F0%9F%87%AB%F0%9F%87%B7/2
