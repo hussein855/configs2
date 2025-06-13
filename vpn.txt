@@ -1,10 +1,134 @@
-
-ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@107.155.57.11:8080#%F0%9F%87%BA%F0%9F%87%B8US-107.155.57.11-3789
-ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@107.155.57.51:8080#%F0%9F%87%BA%F0%9F%87%B8US-107.155.57.51-3910
-ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw==@104.192.226.106:989#%F0%9F%87%BA%F0%9F%87%B8US-104.192.226.106-4194
-ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY=@103.36.91.23:8388#%F0%9F%87%BA%F0%9F%87%B8US-103.36.91.23-5704
-vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.114:8880?security=&sni=pqh25v1.vetdomok.shop&type=grpc&encryption=none#%F0%9F%87%BA%F0%9F%87%B8[openproxylist.com]%20vless-US
-vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.163:8880?security=&sni=pqh35v1.vetdomok.shop&type=grpc&encryption=none#%F0%9F%87%BA%F0%9F%87%B8[openproxylist.com]%20vless-US
-
-hy2://115599a@88.218.78.53:34152?obfs=salamander&obfs-password=115599aa&insecure=1#HYS/313/%F0%9F%87%AB%F0%9F%87%B7/2
-
+{
+  "dns": {
+    "hosts": {
+      "ext:geosite_c4u.dat:category-ads-all": "127.0.0.1",
+      "geosite:category-porn": "127.0.0.1",
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "servers": [
+      "https://8.8.8.8/dns-query"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "tag": "http"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "wireguard",
+      "settings": {
+        "address": [
+          "172.16.0.2/32"
+        ],
+        "mtu": 1280,
+        "peers": [
+          {
+            "endpoint": "188.114.99.179:903",
+            "keepAlive": 5,
+            "preSharedKey": "",
+            "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+          }
+        ],
+        "reserved": [
+          22,
+          226,
+          184
+        ],
+        "secretKey": "mB9Y5kP6FteelF+518OB6EWqYSPn7FKBwUL9LIRonEk=",
+        "wnoise": "quic",
+        "wnoisecount": "15",
+        "wnoisedelay": "1-2",
+        "wpayloadsize": "5-10"
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {},
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "remarks": "W 2025-06-13 19:00",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "domain": [
+          "domain:ir",
+          "geosite:category-ir",
+          "geosite:private"
+        ],
+        "outboundTag": "direct",
+        "type": "field"
+      },
+      {
+        "ip": [
+          "geoip:ir",
+          "geoip:private"
+        ],
+        "outboundTag": "direct",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "ext:geosite_c4u.dat:category-ads-all",
+          "geosite:category-porn"
+        ],
+        "outboundTag": "block",
+        "type": "field"
+      },
+      {
+        "ip": [
+          "10.10.34.34",
+          "10.10.34.35",
+          "10.10.34.36"
+        ],
+        "outboundTag": "block",
+        "type": "field"
+      }
+    ]
+  }
+}
