@@ -1,4 +1,4 @@
-ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@107.155.57.51:8080#%F0%9F%87%BA%F0%9F%87%B8US-107.155.57.51-3910
+
 ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@107.155.57.11:8080#%F0%9F%87%BA%F0%9F%87%B8US-107.155.57.11-3789
 ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@107.155.57.51:8080#%F0%9F%87%BA%F0%9F%87%B8US-107.155.57.51-3910
 ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw==@104.192.226.106:989#%F0%9F%87%BA%F0%9F%87%B8US-104.192.226.106-4194
@@ -7,3 +7,6 @@ vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.114:8880?security=&sni=pq
 vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.163:8880?security=&sni=pqh35v1.vetdomok.shop&type=grpc&encryption=none#%F0%9F%87%BA%F0%9F%87%B8[openproxylist.com]%20vless-US
 
 hy2://115599a@88.218.78.53:34152?obfs=salamander&obfs-password=115599aa&insecure=1#HYS/313/%F0%9F%87%AB%F0%9F%87%B7/2
+
+vless://318749cf-719c-46fd-ae04-1fffc8d86513@tr2.pgyou.fun:13421?type=tcp&path=%2F&host=speedtest.net&headerType=http&security=none#FuseTR-0255
+
