@@ -8,5 +8,3 @@ vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.163:8880?security=&sni=pq
 
 hy2://115599a@88.218.78.53:34152?obfs=salamander&obfs-password=115599aa&insecure=1#HYS/313/%F0%9F%87%AB%F0%9F%87%B7/2
 
-vless://318749cf-719c-46fd-ae04-1fffc8d86513@tr2.pgyou.fun:13421?type=tcp&path=%2F&host=speedtest.net&headerType=http&security=none#FuseTR-0255
-
