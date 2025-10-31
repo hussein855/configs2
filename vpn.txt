@@ -1,2 +1,6 @@
-vless://981db2b8-34b1-4502-65ae-666271a2dca1@srv-d0.netmaster.cam:3389?encryption=none&security=none&sni=1&type=ws&path=%2F#HYS%2F313%2FWAR%2F%F0%9F%87%A9%F0%9F%87%AA%2F1
-vless://d6ca0139-4a66-436f-22a7-7a91bb4b5ce1@srv-e0.netmaster.cam:995?encryption=none&security=none&sni=1&type=ws&path=%2F#HYS%2F313%2FWAR%2F%F0%9F%87%A9%F0%9F%87%AA%2F2
+vless://b9dc54b4-d474-4087-96d0-81de47f4578d@203.202.232.252:4655?encryption=none&security=none&type=tcp&headerType=none#%F0%9F%87%B9%F0%9F%87%B7%20Turkey-60923
+vless://d5d920f6-6d59-4d92-8e36-e7367efcf035@azadnet-1.pages.dev:2087?encryption=none&security=tls&sni=azadnet-1.pages.dev&type=ws&host=azadnet-1.pages.dev&path=%2Fl2SFgDFmDPUdu9H9%3Fed%3D2560#%F0%9F%8F%81%20Relay-61756
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@45.87.175.197:8080#%F0%9F%87%B1%F0%9F%87%B9%20Lithuania-00287
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlx1RDgzQ1x1RERGN1x1RDgzQ1x1RERGQSBSdXNzaWEtMTE4MzMiLA0KICAiYWRkIjogIjQ1LjguMTQ2LjEyOSIsDQogICJwb3J0IjogIjgwIiwNCiAgImlkIjogIjA3MDQwMTZmLTU0MzUtNDY1NS1iZTZhLTc3MWE1YWJhNTJjMyIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiNDUuOC4xNDYuMTI5IiwNCiAgInBhdGgiOiAiL3ZtZXNzLyIsDQogICJ0bHMiOiAiIiwNCiAgInNuaSI6ICIiLA0KICAiYWxwbiI6ICIiLA0KICAiZnAiOiAiIg0KfQ==
+
+hysteria2://fIiC9dBT7s@95.182.98.196:19548?obfs=salamander&obfs-password=sdhfdsjh45dg4j5gj4j&insecure=1#HYS%2F313%2F%F0%9F%87%AB%F0%9F%87%B7%2F1
