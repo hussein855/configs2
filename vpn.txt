@@ -5,3 +5,5 @@ vless://b36a16e4-ded8-11f1-bdea-5254b0a2c347@bh1.vpnjantit.com:443?type=tcp&secu
 vless://ce7a4592-deda-11f1-a591-5254b0a2c347@bh1.vpnjantit.com:443?type=tcp&security=reality&sni=cloudflare.com&fp=chrome&pbk=lDEkUokSL-mrM1jsH8UKs8-3cfJMvkxhY7k37iBkFi4&sid=32b72239bc69220e&flow=xtls-rprx-vision#hussein21-vpnjantit.com
 
 vless://a688bbe2-e455-11f1-a2d1-0f56c102b673@gr1.vpnjantit.com:8443?type=tcp&security=reality&sni=cloudflare.com&fp=chrome&pbk=GbzSIW3yd11r22Twahtyz4CMDxUj_QQe5RKvZukxDUw&sid=992f9f92ddfa5056&flow=xtls-rprx-vision#hussein321-vpnjantit.com
+
+vless://0894b2c8-e456-11f1-a96e-525400001993@tr5.vpnjantit.com:443?type=tcp&security=reality&sni=cloudflare.com&fp=chrome&pbk=GAx3Ks_dHAps9jRZpIPzPXz64uTw2cEb4NRv8ZgOMX4&sid=43c50e5510ab7722&flow=xtls-rprx-vision#duck22-vpnjantit.com
